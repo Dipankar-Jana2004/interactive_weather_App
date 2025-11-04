@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Interactive Weather Dashboard — Internship</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1 class="app-title">Interactive Weather Dashboard</h1>
+
+<div class="main">
+
+  <div class="panel" aria-label="Weather Input">
+    <div id="alertBox" class="alert hidden">Please enter a valid city.</div>
+
+    <div class="spaced toggle">
+      <div style="font-weight:700;color:#1f2937">Celsius</div>
+      <label class="switch">
+        <input id="unitToggle" type="checkbox" aria-label="Toggle unit">
+        <span class="slider"></span>
+      </label>
+      <div style="font-weight:700;color:#1f2937">Fahrenheit</div>
+    </div>
+
+    <label for="leftCity">City Name</label>
+    <input id="leftCity" type="text" placeholder="e.g., New York">
+
+    <label for="leftTemp">Temperature</label>
+    <input id="leftTemp" type="number" placeholder="Enter temperature " min="-100" max="100">
+
+    <label for="leftCondition">Condition</label>
+    <select id="leftCondition">
+      <option value="">-- Choose condition --</option>
+      <option value="Sunny">Sunny ☀️</option>
+      <option value="Partly cloudy">Partly cloudy 🌤️</option>
+      <option value="Cloudy">Cloudy ☁️</option>
+      <option value="Rainy">Rainy 🌧️</option>
+      <option value="Stormy">Stormy ⛈️</option>
+      <option value="Snowy">Snowy ❄️</option>
+      <option value="Clear">Clear 🌞</option>
+      <option value="Windy">Windy 🌬️</option>
+    </select>
+
+    <button id="addBtn" class="btn" style="margin-top:14px;width:100%;">Add City</button>
+  </div>
+
+  <div class="overview">
+    <h2>Weather Overview</h2>
+    <div class="card" id="overviewCard">
+      <ul id="overviewList" class="list"></ul>
+      <div class="clear-wrap">
+        <button id="clearAll" class="clear-btn">Clear All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Search -->
+  <div class="panel" aria-label="City Search">
+    <h3>City Search</h3>
+    <div style="display:flex;gap:10px;align-items:center">
+      <input id="searchInput" type="text" placeholder="Search city...">
+      <button id="searchBtn" class="btn" style="padding:8px 12px">Search</button>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;align-items:center;margin-top:10px;gap:8px">
+      <label style="font-size:13px;color:#475569">°C/°F</label>
+      <label class="switch">
+        <input id="searchUnit" type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <ul id="searchResults" class="search-list"></ul>
+    <button id="clearSearch" class="clear-btn">Clear All</button>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+<script type="module" src="./js/conversionModule.js"></script>
+<script type="module" src="./js/domUpdateModule.js"></script>
+<script type="module" src="./js/eventHandlingModule.js"></script>
+<script type="module" src="./js/storageModule.js"></script>
+<script type="module" src="./js/weatherModule.js"></script>
+</body>
+</html>
